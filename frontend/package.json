@@ -1,17 +1,28 @@
 {
-  "name": "frontend",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "bootstrap": "^4.3.1",
+    "flow-typed": "^2.6.1",
+    "mobx": "^5.15.0",
+    "mobx-logger": "^0.7.1",
+    "mobx-persist": "^0.4.1",
+    "popper.js": "^1.16.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:unit": "react-scripts test",
+    "test:e2e": "mocha --require babel-core/register --watch \"e2e/**/*.js\"",
+    "eject": "react-scripts eject",
+    "dev": "npm start",
+    "flow": "flow"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +38,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.23",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "flow-bin": "^0.109.0",
+    "mocha": "^6.2.2",
+    "react-test-renderer": "^16.12.0",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "proxy": "http://localhost:80"
 }
