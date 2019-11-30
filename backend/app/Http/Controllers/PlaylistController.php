@@ -15,7 +15,9 @@ class PlaylistController extends Controller
      */
     public function playlists()
     {
-        return response(null, 200);
+        $playlists = Playlist::all();
+
+        return response(['playlists' => PlaylistResource::collection($playlists)], 200);
     }
 
     /**
