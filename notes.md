@@ -28,15 +28,16 @@
 
 example:
 ```
+POST:
 {
   playlist: {
     name: "MyPlaylist"
     playlists: [
       playlist: {
-        name: "SomePlaylist"
+        id: 43857634
       },
       playlist: {
-        name: "OtherPlaylist"
+        id: 34596374
       }
     ],
     clips: [
@@ -55,14 +56,39 @@ example:
     ]
   }
 }
+
+FETCH:
+{
+  playlist: {
+    id: 36897043
+  }
+}
 ```
 
 - POST Playlist addition /api/playlist/{id}
 example:
 ```
+POST:
 {
   playlist: {
     name: "Super Playlist"
+  }
+}
+
+FETCH:
+{
+  playlist: {
+    playlists: [
+      playlist: {
+        id: 43857634
+      },
+      playlist: {
+        id: 34596374
+      },
+      playlist: {
+        id: 68763432
+      }
+    ]
   }
 }
 ```
