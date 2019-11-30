@@ -8,8 +8,8 @@ Open c:/xampp/apache/conf/extra/vhosts.conf and add the following rule
 
 ```
 <VirtualHost localhost:80>
-  DocumentRoot "c:/xampp/htdocs/playlist-master/frontend/public" 
-  <Directory "c:/xampp/htdocs/playlist-master/frontend/public">
+  DocumentRoot "c:/xampp/htdocs/playlist-master/backend/public" 
+  <Directory "c:/xampp/htdocs/playlist-master/backend/public">
         Options Indexes FollowSymLinks
         AllowOverride All
         Require all granted
