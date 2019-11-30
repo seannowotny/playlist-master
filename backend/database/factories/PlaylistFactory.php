@@ -10,9 +10,5 @@ use App\Http\Resources\User as UserResource;
 $factory->define(Playlist::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        // 'playlists' => [],
-        // 'clips' => [],
-        // 'likes' => [],
-        // 'comments' => [],
     ];
 });
