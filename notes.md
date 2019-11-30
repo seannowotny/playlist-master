@@ -1,5 +1,11 @@
 # Playlist Master Notes
 
-Models: User, Playlist, Video, Like, Comment
+Models: User, Playlist, Clip, Like, Comment
 
-User fields: Name, 
+- User model fields:      Name, Playlists, Likes, Comments
+
+- Playlist model fields:  Name, Clips, Playlists, User, Likes
+
+- Like model fields:      User, Playlist
+
+- Comment model fields:   User, Playlist
