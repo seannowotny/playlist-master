@@ -17,14 +17,18 @@ class PlaylistsSeeder extends Seeder
 
         $users = User::all();
 
-        $users->each(function(User $user) use (&$playlistsCount)
+        while($playlistsCount > 0)
         {
-            if($playlistsCount > 0)
+            $users->each(function(User $user) use (&$playlistsCount)
             {
-                $user->playlists()->save(factory(Playlist::class)->make([
-                    'user_id' => $user,
-                ]));
-            }
-        });
+                if($playlistsCount > 0)
+                {
+                    $user->playlists()->save(factory(Playlist::class)->make([
+                        'user_id' => $user,
+                    ]));
+                    $playlistsCount--;
+                }
+            });
+        }
     }
 }
