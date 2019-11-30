@@ -1,7 +1,7 @@
 # What this repo is about
 This is an online application which seeks to give the best playlist experience possible.
 Composition of playlists and community features are at the core of this website.
-This project is current work in progress. Feel free to contribute to get this web app up and running.
+This project is currently work in progress. Feel free to contribute to get this web app up and running.
 
 # How to clone and repreduce this repo with XAMPP
 Open c:/xampp/apache/conf/extra/vhosts.conf and add the following rule
