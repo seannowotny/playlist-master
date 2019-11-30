@@ -1,15 +1,17 @@
 # What this repo is about
+
 This is an online application which seeks to give the best playlist experience possible.
 Composition of playlists and community features are at the core of this website.
 This project is currently work in progress. Feel free to contribute to get this web app up and running.
 
-# How to clone and repreduce this repo with XAMPP
+## How to clone and repreduce this repo with XAMPP
+
 Open c:/xampp/apache/conf/extra/vhosts.conf and add the following rule
 
-```
+``` config
 <VirtualHost localhost:80>
-  DocumentRoot "c:/xampp/htdocs/playlist-master/frontend/public" 
-  <Directory "c:/xampp/htdocs/playlist-master/frontend/public">
+  DocumentRoot "c:/xampp/htdocs/playlist-master/backend/public" 
+  <Directory "c:/xampp/htdocs/playlist-master/backend/public">
         Options Indexes FollowSymLinks
         AllowOverride All
         Require all granted
@@ -20,7 +22,7 @@ Open c:/xampp/apache/conf/extra/vhosts.conf and add the following rule
 In your browser enter localhost/phpmyadmin in the url bar and create DBs called playlist-master and playlist-master-testing with utf8mb4_unicode_ci
 Open a command line interface of your choice and type the following
 
-```
+``` cmd
 cd c:/xampp/htdocs
 git clone https://github.com/seannowotny/playlist-master.git
 cd raddite
@@ -28,7 +30,7 @@ cd raddite
 
 Create a .env file and enter the following
 
-```
+``` cmd
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=
@@ -47,7 +49,7 @@ DB_PASSWORD=
 
 Back to the command line interface
 
-```
+``` cmd
 cd ./backend
 php artisan key:generate
 rm composer.lock
@@ -61,14 +63,14 @@ php artisan migrate
 
 Optional:
 
-```
+``` cmd
 php artisan db:seed --no-interaction
 ```
 
 To open the react application, open your browser and enter localhost:3000 into the url bar 
 and enter the following into your command line interface
 
-```
+``` cmd
 cd ../frontend
 npm run dev
 ```

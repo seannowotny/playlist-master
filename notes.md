@@ -10,15 +10,14 @@
 
 - Comment model fields:   User, Playlist
 
-
-#### Frontend API requests:
+#### Frontend API requests
 
 - POST register /api/auth/register
 - GET login /api/auth/login       //Returns token and user details if credentials are correct
 
 - GET authenticate /api/auth      //Requires token. Sends new token.
 
-- GET User /api/user/{id} 
+- GET User /api/user/{id}
 
 - GET Playlists (paginated) /api/playlists/{page} //Eager load playlist composition and details //Maybe add playlist categories later
 
@@ -27,7 +26,8 @@
 - POST Playlist /api/playlist
 
 example:
-```
+
+``` json
 POST:
 {
   playlist: {
@@ -66,8 +66,10 @@ FETCH:
 ```
 
 - POST Playlist addition /api/playlist/{id}
+
 example:
-```
+
+``` json
 POST:
 {
   playlist: {

@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "b1d47c46-557a-4442-a1e7-fe5de93423dd",
+		"name": "Playlist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Playlists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcf0be24-f80e-43af-9d0d-d38b936714d6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/playlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fbac8236-d985-4c1c-b620-a0b8fdcfe102",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fa848aa9-7138-4973-97ad-0b6f16292696",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5adb7827-ab79-4c14-968c-4864a9bac1ff",
+			"key": "rootUrl",
+			"value": "http://localhost/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
