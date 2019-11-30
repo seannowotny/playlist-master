@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PlaylistsSeeder::class);
         $this->call(CommentsSeeder::class);
         $this->call(LikesSeeder::class);
+        $this->call(ClipsSeeder::class);
     }
 }

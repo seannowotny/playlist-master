@@ -16,6 +16,8 @@ class CreateClipsTable extends Migration
         Schema::create('clips', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
+            $table->bigInteger('playlist_id');
+            $table->string('url');
             $table->timestamps();
         });
     }
