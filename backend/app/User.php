@@ -10,20 +10,20 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    // function playlists()
-    // {
-    //     return $this->hasMany(Playlist::class);
-    // }
+    function playlists()
+    {
+        return $this->hasMany(Playlist::class);
+    }
 
-    // function likes()
-    // {
-    //     return $this->hasMany(Like::class);
-    // }
+    function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 
-    // function comments()
-    // {
-    //     return $this->hasMany(Comment::class);
-    // }
+    function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     /**
      * The attributes that are mass assignable.
