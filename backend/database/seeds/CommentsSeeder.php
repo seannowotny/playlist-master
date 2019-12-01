@@ -23,10 +23,9 @@ class CommentsSeeder extends Seeder
             {
                 if($commentsCount > 0)
                 {  
-                    $playlist = $user->playlists->random();
+                    $playlist = $user->myPlaylists->random();
                     $playlist->comments()->save(factory(Comment::class)->make([
-                        'user_id' => $user,
-                        'playlist_id' => $playlist
+                        'user_id' => $user
                     ]));
                     $commentsCount--;
                 }

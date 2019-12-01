@@ -4,35 +4,41 @@ namespace App;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Playlist extends Model
 {
-    function playlists()
+    use SoftDeletes;
+
+    protected $guarded = [];
+
+    public function myPlaylists()
     {
-        return $this->hasMany(Playlist::class);
+        return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'belonger_id', 'recipient_id');
     }
 
-    function likes()
+    public function playlistsIBelongTo()
     {
-        return $this->hasMany(Like::class);
+        return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'recipient_id', 'belonger_id');
     }
 
-    function comments()
+    public function likes()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Like::class, 'likeable');
     }
 
-    function clips()
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function clips()
     {
         return $this->hasMany(Clip::class);
     }
 
-    function user()
+    public function user()
     {
         return $this->hasOne(User::class);
     }
-
-    protected $fillable = [
-        'name',
-    ];
 }

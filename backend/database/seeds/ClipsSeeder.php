@@ -14,7 +14,7 @@ class ClipsSeeder extends Seeder
      */
     public function run()
     {
-        $clipsCount = (int)$this->command->ask('How many clips would you like? (Default 1000)', 1000);
+        $clipsCount = (int)$this->command->ask('How many clips would you like? (Default 100)', 100);
 
         $users = User::all();
         $playlists = Playlist::all();
@@ -26,7 +26,6 @@ class ClipsSeeder extends Seeder
 
             $playlist->clips()->save(factory(Clip::class)->make([
                 'user_id' => $user,
-                'playlist_id' => $playlist,
             ]));
 
             $clipsCount--;

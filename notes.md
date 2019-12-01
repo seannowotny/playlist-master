@@ -2,13 +2,15 @@
 
 ## Backend Models: User, Playlist, Clip, Like, Comment
 
-- User model fields:      Name (unique), Playlists, Likes, Comments
+- User model fields:      Name (unique), Playlists, Likes, Comments...
 
-- Playlist model fields:  Name (unique), Clips, Playlists, User, Likes
+- Playlist model fields:  Name (unique), Clips, Playlists, User, Likes...
 
-- Like model fields:      User, Playlist
+- Like model fields:      User, Playlist...
 
-- Comment model fields:   User, Playlist
+- Comment model fields:   User, Playlist...
+
+// Add suggestion model
 
 ### Frontend API requests
 
@@ -97,6 +99,6 @@ FETCH:
 
 // Maybe add 'change user details' functionality
 
-#### Frontend Models: Playlist, Clip
+#### Frontend Models: Playlist, Clip...
 
-#### Playlist actions: Add
+#### Playlist actions: Add...

@@ -3,26 +3,30 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
     use Notifiable;
 
-    function playlists()
+    protected $guarded = [];
+
+    function myPlaylists()
     {
         return $this->hasMany(Playlist::class);
     }
 
-    function likes()
+    function myLikes()
     {
-        return $this->hasMany(Like::class);
+        return $this->morphMany(Like::class, 'likeable');
     }
 
-    function comments()
+    public function myComments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     /**
