@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     function myLikes()
     {
-        return $this->hasMany(Like::class);
+        return $this->morphMany(Like::class, 'likeable');
     }
 
     public function myComments()

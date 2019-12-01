@@ -19,8 +19,8 @@ class CreateLikesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('playlist_id');
-            $table->foreign('playlist_id')->references('id')->on('playlists');
+            $table->unsignedBigInteger('likeable_id');
+            $table->string('likeable_type');
 
             $table->timestamps();
         });
