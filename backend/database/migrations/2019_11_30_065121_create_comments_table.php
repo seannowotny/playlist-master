@@ -24,6 +24,7 @@ class CreateCommentsTable extends Migration
             $table->foreign('playlist_id')->references('id')->on('playlists');
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 }

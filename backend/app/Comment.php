@@ -9,6 +9,8 @@ class Comment extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     function playlist()
     {
         return $this->hasOne(Playlist::class);

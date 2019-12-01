@@ -19,14 +19,9 @@ class CreatePlaylistsTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-
-            // $table->unsignedBigInteger('playlist_id')->nullable();
-            // $table->foreign('playlist_id')->references('id')->on('playlist')->onDelete('set null');
-
-            $table->unsignedBigInteger('belonger_receiver_id');
-            $table->foreign('belonger_receiver_id')->references('id')->on('belonger_receivers');
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 }

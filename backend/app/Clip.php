@@ -9,6 +9,8 @@ class Clip extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     function playlists()
     {
         return $this->hasMany(Playlist::class);

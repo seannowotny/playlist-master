@@ -26,7 +26,6 @@ class ClipsSeeder extends Seeder
 
             $playlist->clips()->save(factory(Clip::class)->make([
                 'user_id' => $user,
-                'playlist_id' => $playlist,
             ]));
 
             $clipsCount--;

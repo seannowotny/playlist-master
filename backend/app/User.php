@@ -12,6 +12,8 @@ class User extends Authenticatable
     use SoftDeletes;
     use Notifiable;
 
+    protected $guarded = [];
+
     function myPlaylists()
     {
         return $this->hasMany(Playlist::class);

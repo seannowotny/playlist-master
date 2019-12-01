@@ -10,37 +10,49 @@ class Playlist extends Model
 {
     use SoftDeletes;
 
-    function recipientPlaylists() // Playlists this playlist belongs to
+    protected $guarded = [];
+
+    // public function recipientable()
+    // {
+    //     return $this->morphFromMany(Playlist::class, 'belonger_recipient', 'recipientable_id' /*This playlist*/, 'belongable_id');
+    // }
+
+    // public function belongable()
+    // {
+    //     return $this->morphToMany(Playlist::class, 'belonger_recipient', 'belonger_id' /*This playlist*/, 'recipient_id');
+    // }
+
+    public function myPlaylists()
     {
-        return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'belonger_id' /*This playlist*/, 'recipient_id' /*Recipient playlist*/);
+        return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'belonger_id', 'recipient_id');
     }
 
-    function playlists() // The playlists which are contained in this playlist
+    public function playlistsIBelongTo()
     {
-        return $this->hasMany(Playlist::class);
+        return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'recipient_id', 'belonger_id');
     }
 
-    function likes()
+    public function likes()
     {
         return $this->hasMany(Like::class);
     }
 
-    function comments()
+    public function comments()
     {
         return $this->hasMany(Comment::class);
     }
 
-    function clips()
+    public function clips()
     {
         return $this->hasMany(Clip::class);
     }
 
-    function user()
+    public function user()
     {
         return $this->hasOne(User::class);
     }
 
     protected $fillable = [
-        'name',
+        'name', 'playlists', 'user_id'
     ];
 }
