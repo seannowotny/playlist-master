@@ -24,9 +24,9 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
-    function myComments()
+    public function myComments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     /**

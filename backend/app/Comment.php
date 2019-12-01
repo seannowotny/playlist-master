@@ -11,17 +11,13 @@ class Comment extends Model
 
     protected $guarded = [];
 
-    function playlist()
+    function commentable()
     {
-        return $this->hasOne(Playlist::class);
+        return $this->morphTo();
     }
 
     function user()
     {
         return $this->hasOne(User::class);
     }
-
-    protected $fillable = [
-        'text',
-    ];
 }

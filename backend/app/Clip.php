@@ -11,6 +11,11 @@ class Clip extends Model
 
     protected $guarded = [];
 
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
     function playlists()
     {
         return $this->hasMany(Playlist::class);
@@ -20,8 +25,4 @@ class Clip extends Model
     {
         return $this->hasOne(User::class);
     }
-
-    protected $fillable = [
-        'url',
-    ];
 }

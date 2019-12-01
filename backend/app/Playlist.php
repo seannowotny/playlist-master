@@ -12,16 +12,6 @@ class Playlist extends Model
 
     protected $guarded = [];
 
-    // public function recipientable()
-    // {
-    //     return $this->morphFromMany(Playlist::class, 'belonger_recipient', 'recipientable_id' /*This playlist*/, 'belongable_id');
-    // }
-
-    // public function belongable()
-    // {
-    //     return $this->morphToMany(Playlist::class, 'belonger_recipient', 'belonger_id' /*This playlist*/, 'recipient_id');
-    // }
-
     public function myPlaylists()
     {
         return $this->belongsToMany(Playlist::class, 'playlist_playlist', 'belonger_id', 'recipient_id');
@@ -39,7 +29,7 @@ class Playlist extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     public function clips()
@@ -51,8 +41,4 @@ class Playlist extends Model
     {
         return $this->hasOne(User::class);
     }
-
-    protected $fillable = [
-        'name', 'playlists', 'user_id'
-    ];
 }
